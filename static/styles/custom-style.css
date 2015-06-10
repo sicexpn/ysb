@@ -1,0 +1,83 @@
+#floater    {float:left; width:50%; margin-right:-400px;}
+
+#page_body{
+    padding-top:50px;
+    padding-bottom:50px;
+}
+
+#page_body h1{
+    color: #5d6063;
+    font-size: 32px;
+    text-align: center;
+}
+
+#page_body h2{
+    color: #5d6063;
+    font-size: 20px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+
+#page_body form{
+    text-align: left;
+    color: #6e757a;
+}
+
+#page_body form table{
+    margin: auto;
+}
+
+#page_body table{
+    margin: auto;
+}
+
+#page_body form input[type="text"]{
+    color: #000000;
+}
+
+#page_body form td{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#page_body td{
+    color: #7c7d81;
+}
+#page_body td:hover{
+    color: #232424;
+}
+
+
+#page_body #sla{
+    margin-left: 350px;
+    margin-right: 350px;
+    word-wrap: break-word;
+    word-break: normal; 
+    width: 500px
+}
+
+#page_body .small_appicon{
+    width:30px;
+}
+
+#page_body .large_appicon{
+    width:50px;
+}
+
+.progress{
+    display:none;
+}
+
+.progress-bar {
+    background: url("/static/images/progressbar.gif") !important;
+    width: 0%;
+    height: 18px;
+}
+
+.btn-delete{
+    color: white;
+    background-color: #ff1929;
+    background-image: linear-gradient(to bottom, #ff1929, #ff1929);
+}
+.btn-delete:hover { background-color: #ff1929; !important; }

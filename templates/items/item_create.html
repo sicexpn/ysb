@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" media="all" href="/static/styles/jquery.fileupload.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="/static/styles/jquery.fileupload-ui.css"/>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="/static/scripts/cookie.js"></script> 
+<script type="text/javascript" src="/static/scripts/user.js"></script> 
+<script type="text/javascript" src="/static/scripts/load-image.all.min.js"></script> 
+<script type="text/javascript" src="/static/scripts/jquery.ui.widget.js"></script> 
+<!-- The basic File Upload plugin -->
+<script type="text/javascript" src="/static/scripts/jquery.fileupload.js"></script>
+<!-- The File Upload processing plugin -->
+<script type="text/javascript" src="/static/scripts/jquery.fileupload-process.js"></script>
+<!-- The File Upload validation plugin -->
+<script type="text/javascript" src="/static/scripts/jquery.fileupload-validate.js"></script>
+<script type="text/javascript" src="/static/scripts/jquery.fileupload-image.js"></script>
+<script type="text/javascript" src="/static/scripts/jquery.iframe-transport.js"></script>
+<script type="text/javascript" src="/static/scripts/files.js"></script>
+{% endblock %}
+
+{% block page_body %}
+
+   <div class="motopress-wrapper content-holder clearfix"> 
+    <div class="container"> 
+        <h1>{{title}}</h1>    
+         <form id=new_app_form onsubmit="return registerNewAPP();" method="post" enctype="multipart/form-data" action="">
+        {% csrf_token %}
+        <input type=hidden id="app_image" >
+        <input type=hidden id="app_file" >
+            <table>
+            <tr><td>item name:</td><td><input type=text id="name"></td></tr>
+            <tr><td>item price:</td><td><input type=text id="price"></td></tr>
+            <tr><td>item image:</td><td class=widetd>
+                <span class="btn btn-success fileinput-button">
+                    <i class="glyphicon glyphicon-plus"></i>
+                    <span>Choose image...</span>
+                    <!-- The file input field used as target for the file upload widget -->
+                    <input id="fileupload_appimage" type="file" name="files[]">
+                </span>   
+                    <span id="files_appimage" class="files"></span>
+                <!-- The global progress bar -->
+                <div id="progress_appimage" class="progress">
+                    <div class="progress-bar progress-bar-success"></div>
+                </div>
+            </td></tr>
+            <tr><td></td><td><input type=submit class="btn btn-primary" id=create value="Create"></td></tr>
+            </table>
+         </form>
+    </div> 
+   </div> 
+{% endblock %}
+
