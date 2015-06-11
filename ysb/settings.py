@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'ui',
     'users',	
     'items',
     'orders',
@@ -52,6 +53,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 )
 
 ROOT_URLCONF = 'ysb.urls'
@@ -94,7 +96,7 @@ USE_TZ = True
 
 DEFAULT_CHARSET = 'UTF-8'
 MEDIA_ROOT = '/var/ysb/media/'
-MEDIA_URL = ''
+MEDIA_URL = '/media/'
 TEMPLATE_DIRS = ( 
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
@@ -105,6 +107,7 @@ TEMPLATE_DIRS = (
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
+#STATIC_ROOT = '/var/ysb/static/'
 STATIC_ROOT = ''
 
 # URL prefix for static files.
