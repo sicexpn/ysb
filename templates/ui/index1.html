@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" media="all" href="/static/styles/jquery.fileupload.css"/>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="/static/scripts/cookie.js"></script> 
+<script type="text/javascript" src="/static/scripts/user.js"></script> 
+<script type="text/javascript" src="/static/scripts/load-image.all.min.js"></script> 
+<script type="text/javascript" src="/static/scripts/jquery.ui.widget.js"></script> 
+<script type="text/javascript" src="/static/scripts/jquery.fileupload.js"></script>
+<script type="text/javascript" src="/static/scripts/jquery.iframe-transport.js"></script>
+<script type="text/javascript" src="/static/scripts/files.js"></script>
+{% endblock %}
+
+{% block page_body %}
+
+   <div class="motopress-wrapper content-holder clearfix"> 
+    <div class="container"> 
+        <h1>{{title}}</h1>    
+	<table class='table table-hover'>
+	<tr><th>物品图片</th><th>物品名称</th><th>物品价格</th></tr>
+	{% for item in items %}
+	<tr>
+		<td><a href="{{basedir}}{{item.image}}"  target=_blank ><img src="{{basedir}}{{item.image}}" height=50 width=50></a></td>
+		<td>{{item.name}}</td>
+		<td>{{item.price}}</td>
+	</tr>
+	{% endfor %}
+	</table>
+    </div> 
+   </div> 
+{% endblock %}
+
