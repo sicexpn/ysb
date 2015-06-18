@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'ui',
     'users',	
     'items',
+    'regions',
     'orders',
 )
 
