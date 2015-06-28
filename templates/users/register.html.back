@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block scripts %}
+<script type="text/javascript" src="/static/scripts/sha256.js"></script> 
+<script type="text/javascript" src="/static/scripts/user.js"></script> 
+<script type="text/javascript" src="/static/scripts/jquery-1.4.3.min.js"></script>
+{% endblock %}
+
+{% block page_body %}
+    <div id="templatemo_main">
+	<div id="content" class="float_r">	
+	
+        <h1>{{title}}</h1>
+	<div class="product_box">    
+         <form id=register_form" onsubmit="return registerUser();" method="post" action="">
+		{% csrf_token %}
+            <table>
+            <tr><td>姓名:</td><td><input type=text id="user_name"></td></tr>
+            <tr><td>电话:</td><td><input type=text id="user_phone"></td></tr>
+            <tr><td>密码:</td><td><input type=password id="user_password"></td></tr>
+            <tr><td>确认密码:</td><td><input type=password id="user_password1"></td></tr>
+	    <tr><td>邮箱</td><td><input id="user_email" type="email" /></td></tr>
+	    <tr><td>地址</td><td><input id="user_address" type="text" /></td></tr>
+            <tr><td></td><td><input type=submit id=register value="注册" class="btn btn-success"></td></tr>
+            </table>
+         </form>
+	</div>
+    </div> 
+   </div> 
+{% endblock %}
+

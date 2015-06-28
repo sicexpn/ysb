@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block scripts %}
+<script type="text/javascript" src="/static/scripts/sha256.js"></script> 
+<script type="text/javascript" src="/static/scripts/cookie.js"></script> 
+<script type="text/javascript" src="/static/scripts/user.js"></script> 
+{% endblock %}
+
+{% block page_body %}
+
+   <div class="motopress-wrapper content-holder clearfix"> 
+    <div class="container"> 
+        <h1>{{title}}</h1>    
+         <form id=login_form onsubmit="return loginUser();" method="post" action="">
+            <table>
+            <tr><td>Your ID/Email:</td><td><input type=text id="user_name"></td></tr>
+            <tr><td>Password:</td><td><input type=password id="user_password"></td></tr>
+            <tr><td></td><td><input type=submit class="btn btn-primary" id=login value="Login"></td></tr>
+            </table>
+         </form>
+    </div> 
+   </div> 
+
+
+
+{% endblock %}
+

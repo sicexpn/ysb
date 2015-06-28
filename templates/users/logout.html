@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block scripts %}
+<script type="text/javascript" src="/static/scripts/cookie.js"></script> 
+<script type="text/javascript" src="/static/scripts/user.js"></script> 
+<script type="text/javascript">
+    var a=5000;         //以毫秒为单位
+    var url = "/ui/users/login";
+    $("#redirect").href = url;
+    function fomtime(url)
+    {
+        a=a-1000;
+        var b=new Date();
+        b.setTime(0);
+        var c=new Date();
+        c.setTime(a);
+        var seco1=b.getSeconds();
+        var seco2=c.getSeconds();
+        var seco=seco2-seco1;
+        $('#remain').text(seco);
+        if(seco <=0){
+            window.location.href = url;
+           //$(location).attr('href', url);
+           return;
+        }
+        setTimeout("fomtime('"+url+"')",1000);
+    }
+    fomtime(url);
+</script>
+{% endblock %}
+
+{% block page_body %}
+
+   <div class="motopress-wrapper content-holder clearfix"> 
+    <div class="container"> 
+        <h2>{{message}}, redirect to <a id="redirect" href="/ui/users/login">login page</a> in <span id="remain"></span> seconds.</h2>
+    </div> 
+   </div> 
+
+
+
+{% endblock %}
+

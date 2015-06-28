@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block scripts %}
+<script type="text/javascript" src="/static/scripts/sha256.js"></script> 
+<script type="text/javascript" src="/static/scripts/user.js"></script> 
+{% endblock %}
+
+{% block page_body %}
+   <div class="motopress-wrapper content-holder clearfix"> 
+    <div class="container"> 
+        <h1>{{title}}</h1>    
+         <form id=register_form" onsubmit="return updateUser(false);" method="post" action="">
+            <table>
+            <tr><td>User Name:</td><td><span id="user_name">{{user.name}}</span></td></tr>
+            <tr><td>Password:</td><td><input type=password id="user_password"></td></tr>
+            <tr><td>Confirm password:</td><td><input type=password id="user_password1"></td></tr>
+            <tr><td>Email</td><td><input type=text id="user_email" value="{{user.email}}"></td></tr>
+            <tr><td>SC url</td><td><input type=text id="user_sc" value="{{user.sc}}"></td></tr>
+            <tr><td>Company</td><td><input type=text id="user_company" value="{{user.company}}"></td></tr>
+            <tr><td></td><td><input type=submit id=update value="Update" class="btn btn-success"></td></tr>
+            </table>
+         </form>
+    </div> 
+   </div> 
+{% endblock %}
+

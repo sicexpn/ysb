@@ -1,55 +1,36 @@
-var server_root = "";
-function deleteClient(a){
-    var s=a.parentNode.parentNode.rowIndex;
-    var name=$("#table_client tr:eq("+s+") td:nth-child(1)").html();
-    var appclient=$("#table_client tr:eq("+s+") td:nth-child(2)").html();
-    $.ajax({
-        type:"POST",
-        url:"/ui/users/rest/deleteclient",
-        dataType:'json',
-        data:{
-            "name":name,
-            "appclient":appclient
-        },
-        success:function(result){
-            alert("delete ok");
-        },
-        error:function(result){
-            alert("delete error");
-        }
-    });
-}
 function registerUser(){
   try{
     var user_name = $("#user_name").val();
+    var user_phone = $("#user_phone").val();
+    var user_address = $("#user_address").val();
     var user_password = $("#user_password").val();
     var user_password1 = $("#user_password1").val();
     var user_email = $("#user_email").val();
-    var user_sc = $("#user_sc").val();
-    if(user_name == "" || user_password == "" ||user_password1==""
-      || user_email == ""|| user_sc == ""){
-       bootbox.alert("field can not be empty");
+    if(user_name == "" || user_phone == "" || user_address=="" || user_password == "" ||user_password1==""
+      || user_email == ""){
+       bootbox.alert("字段不能为空");
        return false;
     }
     if(user_password!=user_password1){
-       bootbox.alert("password not match");
+       bootbox.alert("密码不匹配");
        return false;
     }
     user_password = CryptoJS.SHA256(user_password).toString(CryptoJS.enc.Hex);
 
-    var data ={name:user_name, password:user_password, email:user_email, sc:user_sc};
-    //var data ={name:user_name, password:user_password, email:user_email, company:"unknown"};
+    var data ={name:user_name, phone:user_phone, address: user_address, password:user_password, email:user_email, };
+    alert(data)
     $.ajax(
     {
       type: "POST",
-      url:"/users/",
+      url:"/users/rest_user_new",
       contentType: "application/json; charset=utf-8",
       dataType: "json",
       data:JSON.stringify(data),
       complete: function(xhr){
         if (xhr.readyState == 4){
           if(xhr.status == 201){
-              $(location).attr('href', "/ui/users/login");
+		bootbox.alert("register ok");
+              //$(location).attr('href', "/users/login");
           }
           else if(xhr.status == 417)
               bootbox.alert("Data: " + xhr.responseText+ "\nStatus: " + xhr.statusText);
