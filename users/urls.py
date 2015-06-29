@@ -16,6 +16,6 @@ urlpatterns = patterns('',
     (r'^login$', user_login),  
     (r'^logout$', user_logout),  
     (r'^new$', new_user),
-    (r'^/users/rest_user_new$', rest_user_new),
+    (r'^rest_user$', UserView.as_view()),
 )
 

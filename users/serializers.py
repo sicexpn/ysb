@@ -3,9 +3,9 @@ from users.models import User
 
 class UserSerializer(serializers.Serializer):
     name = serializers.CharField(max_length=200)
-    phone = serializers.CharField(max_length=48,unique=True)
-    email = serializers.EmailField(unique=True)
-    address = serializers.TextField()
+    phone = serializers.CharField(max_length=48)
+    email = serializers.EmailField()
+    address = serializers.CharField()
     password = serializers.CharField(max_length=200)	
     class Meta:
         model = User 

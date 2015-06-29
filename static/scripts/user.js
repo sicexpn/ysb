@@ -8,44 +8,47 @@ function registerUser(){
     var user_email = $("#user_email").val();
     if(user_name == "" || user_phone == "" || user_address=="" || user_password == "" ||user_password1==""
       || user_email == ""){
-       bootbox.alert("字段不能为空");
+       alert("字段不能为空");
        return false;
     }
     if(user_password!=user_password1){
-       bootbox.alert("密码不匹配");
+       alert("密码不匹配");
        return false;
     }
     user_password = CryptoJS.SHA256(user_password).toString(CryptoJS.enc.Hex);
 
-    var data ={name:user_name, phone:user_phone, address: user_address, password:user_password, email:user_email, };
-    alert(data)
+    var data ={"name":user_name, "phone":user_phone, "address": user_address, "password":user_password, "email":user_email, };
+    alert(data.name)
     $.ajax(
     {
+      beforeSend: function (xhr){ 
+      	//xhr.setRequestHeader('Authorization', "Basic "+ btoa(username + ':' + password)); 
+    	},
       type: "POST",
-      url:"/users/rest_user_new",
+      url:"/users/rest_user",
       contentType: "application/json; charset=utf-8",
       dataType: "json",
       data:JSON.stringify(data),
       complete: function(xhr){
         if (xhr.readyState == 4){
           if(xhr.status == 201){
-		bootbox.alert("register ok");
+		alert("register ok");
               //$(location).attr('href', "/users/login");
           }
           else if(xhr.status == 417)
-              bootbox.alert("Data: " + xhr.responseText+ "\nStatus: " + xhr.statusText);
+              alert("Data: " + xhr.responseText+ "\nStatus: " + xhr.statusText);
           else
-              bootbox.alert("Data: " + xhr.responseText+ "\nStatus: " + xhr.statusText);
+              alert("Data: " + xhr.responseText+ "\nStatus: " + xhr.statusText);
         }
         else
-          bootbox.alert("error status: "+ xhr.readyState);
+          alert("error status: "+ xhr.readyState);
       }
     }
     );
     return false;
   }
   catch(err){
-    bootbox.alert(err);
+    alert(err);
     return false;
   }
 }
