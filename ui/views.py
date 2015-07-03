@@ -11,7 +11,6 @@ def ui_index(request):
 	template_name='ui/index.html'
 	print template_name
 	title = '养生之宝'
-
 	#products
 	items = Item.objects.all()
 	#regions

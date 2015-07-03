@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from views import * 
+
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'restapp.views.home', name='home'),
@@ -16,6 +17,6 @@ urlpatterns = patterns('',
     (r'^login$', user_login),  
     (r'^logout$', user_logout),  
     (r'^new$', new_user),
-    (r'^rest_user$', UserView.as_view()),
+#    (r'^rest_user$', UserView.as_view()),
 )
 

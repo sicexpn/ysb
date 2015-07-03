@@ -1,0 +1,106 @@
+*** Starting uWSGI 2.0.11 (64bit) on [Fri Jul  3 13:54:21 2015] ***
+compiled with version: 4.8.2 on 03 July 2015 08:56:17
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ25zkn7vitZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /var/ysb
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/ysb
+your processes number limit is 31445
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /var/ysb/ysb.sock fd 3
+Python version: 2.7.6 (default, Jun 22 2015, 18:01:27)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2330910
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 800360 bytes (781 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x2330910 pid: 13117 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 13117)
+spawned uWSGI worker 1 (pid: 13118, cores: 1)
+spawned uWSGI worker 2 (pid: 13119, cores: 1)
+spawned uWSGI worker 3 (pid: 13120, cores: 1)
+spawned uWSGI worker 4 (pid: 13121, cores: 1)
+spawned uWSGI worker 5 (pid: 13122, cores: 1)
+spawned uWSGI worker 6 (pid: 13123, cores: 1)
+spawned uWSGI worker 7 (pid: 13124, cores: 1)
+spawned uWSGI worker 8 (pid: 13125, cores: 1)
+spawned uWSGI worker 9 (pid: 13126, cores: 1)
+spawned uWSGI worker 10 (pid: 13127, cores: 1)
+ui/index.html
+[pid: 13123|app: 0|req: 1/1] 123.126.70.242 () {42 vars in 789 bytes} [Fri Jul  3 05:54:30 2015] GET / => generated 36914 bytes in 48 msecs (HTTP/1.1 200) 4 headers in 144 bytes (1 switches on core 0)
+ui/index.html
+[pid: 13124|app: 0|req: 1/2] 123.126.70.242 () {42 vars in 789 bytes} [Fri Jul  3 05:54:31 2015] GET / => generated 36908 bytes in 48 msecs (HTTP/1.1 200) 4 headers in 144 bytes (1 switches on core 0)
+ui/index.html
+[pid: 13123|app: 0|req: 2/3] 123.126.70.242 () {42 vars in 788 bytes} [Fri Jul  3 06:00:07 2015] GET / => generated 36905 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 144 bytes (1 switches on core 0)
+ui/index.html
+[pid: 13125|app: 0|req: 1/4] 123.126.70.242 () {42 vars in 789 bytes} [Fri Jul  3 06:00:09 2015] GET / => generated 36917 bytes in 48 msecs (HTTP/1.1 200) 4 headers in 144 bytes (1 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+worker 6 buried after 1 seconds
+worker 7 buried after 1 seconds
+worker 8 buried after 1 seconds
+worker 9 buried after 1 seconds
+worker 10 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /var/ysb
+closing all non-uwsgi socket fds > 2 (max_fd = 65535)...
+found fd 3 mapped to socket 0 (/var/ysb/ysb.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from ysb_uwsgi.ini
+*** Starting uWSGI 2.0.11 (64bit) on [Fri Jul  3 06:03:48 2015] ***
+compiled with version: 4.8.2 on 03 July 2015 08:56:17
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ25zkn7vitZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /var/ysb
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/ysb
+your processes number limit is 31445
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /var/ysb/ysb.sock fd 3
+Python version: 2.7.6 (default, Jun 22 2015, 18:01:27)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x19b97b0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 800360 bytes (781 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x19b97b0 pid: 13117 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 13117)
+spawned uWSGI worker 1 (pid: 13219, cores: 1)
+spawned uWSGI worker 2 (pid: 13220, cores: 1)
+spawned uWSGI worker 3 (pid: 13221, cores: 1)
+spawned uWSGI worker 4 (pid: 13222, cores: 1)
+spawned uWSGI worker 5 (pid: 13223, cores: 1)
+spawned uWSGI worker 6 (pid: 13224, cores: 1)
+spawned uWSGI worker 7 (pid: 13225, cores: 1)
+spawned uWSGI worker 8 (pid: 13226, cores: 1)
+spawned uWSGI worker 9 (pid: 13227, cores: 1)
+spawned uWSGI worker 10 (pid: 13228, cores: 1)
+DAMN ! worker 1 (pid: 13219) died :( trying respawn ...
+Respawned uWSGI worker 1 (new pid: 13231)
+Fri Jul  3 06:05:38 2015 - uWSGI worker 6 screams: UAAAAAAH my master disconnected: i will kill myself !!!
