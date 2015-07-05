@@ -21,7 +21,7 @@ class Item(models.Model):
     description = models.TextField(verbose_name='描述')
     date = models.DateTimeField(default=datetime.now(),verbose_name='时间')
 
-    image = models.ImageField(upload_to='photos/originals/%Y/%m/',verbose_name='图片')
+    image = models.ImageField(upload_to='photos/originals/%Y/%m/',verbose_name='默认图片')
     class meta:
         ordering = ['name']
          
@@ -32,7 +32,9 @@ class Item(models.Model):
     def get_absolute_url(self):
         return ('item_detail', None, {'object_id':self.id})
  
- 
+class Photo(models.Model):
+	item = models.ForeignKey(Item)
+	image = models.ImageField(upload_to='photos/originals/%Y/%m/',verbose_name='图片') 
 '''class Photo(models.Model):
     item = models.ForeignKey(Item)
     title = models.CharField(max_length=100)
