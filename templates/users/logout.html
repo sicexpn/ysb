@@ -5,7 +5,7 @@
 <script type="text/javascript" src="/static/scripts/user.js"></script> 
 <script type="text/javascript">
     var a=5000;         //以毫秒为单位
-    var url = "/ui/users/login";
+    var url = "/users/login";
     $("#redirect").href = url;
     function fomtime(url)
     {
@@ -31,9 +31,9 @@
 
 {% block page_body %}
 
-   <div class="motopress-wrapper content-holder clearfix"> 
-    <div class="container"> 
-        <h2>{{message}}, redirect to <a id="redirect" href="/ui/users/login">login page</a> in <span id="remain"></span> seconds.</h2>
+   <div class=""> 
+    <div class=""> 
+        <h2>{{message}}, redirect to <a id="redirect" href="/users/login">login page</a> in <span id="remain"></span> seconds.</h2>
     </div> 
    </div> 
 

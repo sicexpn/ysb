@@ -12,6 +12,7 @@
 <link rel="stylesheet" type="text/css" href="/static/styles/ddsmoothmenu.css" />
 
 <script type="text/javascript" src="/static/scripts/jquery.min.js"></script>
+<script type="text/javascript" src="/static/scripts/cookie.js"></script>
 <script type="text/javascript" src="/static/scripts/bootbox.js"></script>
 <script type="text/javascript" src="/static/scripts/sha256.js"></script>
 <script type="text/javascript" src="/static/scripts/ddsmoothmenu.js">
@@ -20,18 +21,21 @@
 
 <script type="text/javascript">
 
-ddsmoothmenu.init({
+/*ddsmoothmenu.init({
         mainmenuid: "top_nav", //menu DIV id
         orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
         classname: 'ddsmoothmenu', //class added to menu's outer DIV
         //customtheme: ["#1c5a80", "#18374a"],
         contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
 })
-
+*/
 </script>
 
 </head>
 <body>
+{% block scripts %}
+{% endblock %}
+
 <div id=page_body >
 <div id="templatemo_body_wrapper">
 <div id="templatemo_wrapper">
@@ -39,9 +43,14 @@ ddsmoothmenu.init({
         <div id="templatemo_header">
         <div id="site_title"><h1><a href="#">在线 养生宝 商店</a></h1></div>
         <div id="header_right">
-                <p>
-                <a href="#">账户</a> | <a href="#">许愿单</a> | <a href="#">购物车</a> | <a href="#">结算</a> | <a href="/usrs/login">登录</a> | <a href="/users/new">注册</a></p>
-            <p>
+	<p>
+		<a href="#">账户</a> | <a href="#">许愿单</a> | <a href="#">购物车</a> | <a href="#">结算</a> | 
+		{% if request.session.user_name == None %}
+			<a href="/users/login">登录</a> | <a href="/users/new">注册</a></p>
+		{% else %}
+			{{request.session.user_name}}  | <a href="/users/logout">退出</a></p>
+		{% endif %}
+	<p>
 <!--                Shopping Cart: <strong>3 items</strong> ( <a href="shoppingcart.html">Show Cart</a> )-->
                         </p>
                 </div>

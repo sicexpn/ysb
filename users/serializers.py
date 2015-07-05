@@ -7,6 +7,7 @@ class UserSerializer(serializers.Serializer):
     email = serializers.EmailField()
     address = serializers.CharField()
     password = serializers.CharField(max_length=200)	
+    #date = serializers.DateTimeField()	
     class Meta:
         model = User 
         fields = ('name', 'password', 'email', 'phone', 'address')

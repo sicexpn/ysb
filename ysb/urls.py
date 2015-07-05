@@ -19,6 +19,6 @@ urlpatterns = patterns('',
     url(r'^items/', include('items.urls')),
     url(r'^orders/', include('orders.urls')),
 
-#    url(r'^sessions/', include('sessions.urls')),
+    url(r'^sessions/', include('sessions.urls')),
 )
 #urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

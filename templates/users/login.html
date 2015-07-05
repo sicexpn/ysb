@@ -1,27 +1,93 @@
 {% extends 'base.html' %}
-
-{% block scripts %}
-<script type="text/javascript" src="/static/scripts/sha256.js"></script> 
-<script type="text/javascript" src="/static/scripts/cookie.js"></script> 
-<script type="text/javascript" src="/static/scripts/user.js"></script> 
-{% endblock %}
-
 {% block page_body %}
 
-   <div class="motopress-wrapper content-holder clearfix"> 
-    <div class="container"> 
-        <h1>{{title}}</h1>    
-         <form id=login_form onsubmit="return loginUser();" method="post" action="">
+    
+    <div id="templatemo_menubar">
+    	<div id="top_nav" class="ddsmoothmenu">
+            <ul>
+                <li><a href="index.html" class="selected">首页</a></li>
+                <li><a href="#">产品</a>
+                    <ul>
+                        <li><a href="#">Sub menu 1</a></li>
+                        <li><a href="#">Sub menu 2</a></li>
+                        <li><a href="#">Sub menu 3</a></li>
+                        <li><a href="#">Sub menu 4</a></li>
+                        <li><a href="#">Sub menu 5</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">关于</a>
+                    <ul>
+                        <li><a href="#">Sub menu 1</a></li>
+                        <li><a href="#">Sub menu 2</a></li>
+                        <li><a href="#">Sub menu 3</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">问题答疑</a></li>
+                <li><a href="#">结算</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+            <br style="clear: left" />
+        </div> <!-- end of ddsmoothmenu -->
+        <div id="templatemo_search">
+            <form action="#" method="get">
+              <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
+              <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
+            </form>
+        </div>
+    </div> <!-- END of templatemo_menubar -->
+	<div class="copyrights">Collect from <a href="#"  title="网页模板">网页模板</a></div>
+    
+    <div id="templatemo_main">
+    	<div id="sidebar" class="float_l">
+        	<div class="sidebar_box"><span class="bottom"></span>
+            	<h3>地区</h3>   
+                <div class="content"> 
+                	<ul class="sidebar_list">
+                    	<li class="first"><a href="#"></a></li>
+			{% for region in regions %}
+                        <li><a href="#">{{region.name}}</a></li>
+			{% endfor %}
+                        <li class="last"><a href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sidebar_box"><span class="bottom"></span>
+            	<h3>联系方式 </h3>   
+                <div class="content"> 
+                    <div class="bs_box">
+			<h4><a>联系人：李玉鑫</a></h4>
+                    </div>
+                    <div class="bs_box">
+			<h4><a>联系电话：13124742380</a></h4>
+                    </div>
+                    <div class="bs_box">
+			<h4><a>QQ:410316282</a></h4>
+                    </div>
+                    <div class="bs_box">
+			<h4><a>微信:Ryan2011yuxin</a></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="float_r">
+            <script type="text/javascript" src="/static/scripts/jquery-1.4.3.min.js"></script>
+            <script type="text/javascript" src="/static/scripts/user.js"></script>
+            <script type="text/javascript" src="/static/scripts/jquery.nivo.slider.pack.js"></script>
+        	<h1>{{title}}</h1>
+	    <form id=login_form" onsubmit="return loginUser();" method="post" action="">
+                {% csrf_token %}
             <table>
-            <tr><td>Your ID/Email:</td><td><input type=text id="user_name"></td></tr>
-            <tr><td>Password:</td><td><input type=password id="user_password"></td></tr>
-            <tr><td></td><td><input type=submit class="btn btn-primary" id=login value="Login"></td></tr>
+
+            <tr><td>邮箱</td><td><input id="user_email" type="email" /></td></tr>
+            <tr><td>密码:</td><td><input type=password id="user_password"></td></tr>
+
+            <tr><td></td><td><input type=submit id=login value="登录" class="btn btn-success"></td></tr>
             </table>
          </form>
-    </div> 
-   </div> 
 
-
+        </div> 
+        <div class="cleaner"></div>
+    </div> <!-- END of templatemo_main -->
+    
 
 {% endblock %}
-

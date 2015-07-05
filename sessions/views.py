@@ -32,13 +32,12 @@ class UserSessionView(generics.RetrieveUpdateDestroyAPIView):
         return render(request, template_name, {'title': '用户注册'})
 
     def post(self, request, format=None):
-        username = request.DATA.get("name")
+        username = request.DATA.get("email")
         password = request.DATA.get("password")
 
         try:
             user = User.objects.get(Q(name = username)|Q(email = username) & Q(password=password));
             request.session['user_name'] = user.name 
-            request.session['roles'] =  user.roles 
             request.session['login_time'] =  time.time() 
             serializer = UserSerializer(user)
             return JSONResponse(serializer.data, status=status.HTTP_200_OK) 
