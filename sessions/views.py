@@ -15,7 +15,6 @@ from users.serializers import UserSerializer
 from django.db import * 
 from django.core.exceptions import * 
 from django.db.models import Q
- 
 
 class JSONResponse(HttpResponse):
     """
@@ -26,7 +25,6 @@ class JSONResponse(HttpResponse):
         kwargs['content_type'] = 'application/json'
         super(JSONResponse, self).__init__(content, **kwargs)
  
-
 class UserSessionView(generics.RetrieveUpdateDestroyAPIView):
     def get(self, request):
         return render(request, template_name, {'title': '用户注册'})
