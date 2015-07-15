@@ -21,12 +21,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'c=d08i4s&lfjdv1_pe@#%_b+%p-ea!^$)8iosou0)ikcbq1$2p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
+#DEBUG = False
+#DEBUG = True
 TEMPLATE_DEBUG = True
 from admin.views import * 
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['127.0.0.1','localhost']
+ALLOWED_HOSTS = ['*']
 
 
 from admin.views import * 
